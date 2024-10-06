@@ -1,10 +1,12 @@
 import type { Config } from 'tailwindcss';
+import forms from '@tailwindcss/forms';
 
 const config: Config = {
 	content: [
+		'./.storybook/**/*.{js,jsx,ts,tsx}', // scans Storybook config files
 		'./src/**/*.{js,jsx,ts,tsx}', // scans all JS/TS files in src
 		'./src/**/*.css', // scans all CSS files in src
-		'./.storybook/**/*.{js,jsx,ts,tsx}', // scans Storybook config files
+		'./src/components/**/*.{js,jsx,ts,tsx}', // scans all JS/TS components
 	],
 	theme: {
 		extend: {
@@ -36,7 +38,7 @@ const config: Config = {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require('@tailwindcss/forms')],
 	darkMode: ['class', '[data-mode="dark"]'],
 };
 

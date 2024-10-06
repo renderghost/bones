@@ -1,39 +1,125 @@
+// Button.tsx
 import React from 'react';
+import { LucideIcon } from 'lucide-react';
+import './Button.css';
 
-export interface ButtonProps {
-	primary?: boolean;
-	backgroundColor?: string;
-	size?: 'small' | 'medium' | 'large';
-	label: string;
-	onClick?: () => void;
+type ButtonSize = 'small' | 'medium' | 'large';
+type ButtonVariant = 'primary' | 'secondary' | 'caution' | 'transparent';
+type ButtonContent =
+	| 'labelOnly'
+	| 'leftIcon'
+	| 'rightIcon'
+	| 'bothIcons'
+	| 'iconOnly';
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	label?: string;
+	size: ButtonSize;
+	variant: ButtonVariant;
+	contentType: ButtonContent;
+	icon?: LucideIcon;
+	leftIcon?: LucideIcon;
+	rightIcon?: LucideIcon;
+	fullWidth?: boolean;
+	loading?: boolean;
+	tooltip?: string;
 }
 
-export const Button = ({
-	primary = false,
-	size = 'medium',
-	backgroundColor,
+const Button: React.FC<ButtonProps> = ({
 	label,
+	size,
+	variant,
+	contentType,
+	icon: Icon,
+	leftIcon: LeftIcon,
+	rightIcon: RightIcon,
+	fullWidth = false,
+	loading = false,
+	tooltip,
+	className = '',
+	disabled = false,
 	...props
-}: ButtonProps) => {
-	const baseClasses =
-		'inline-block cursor-pointer border-0 rounded-full font-bold leading-none font-sans';
-	const primaryClasses = primary
-		? 'bg-blue-500 text-white'
-		: 'bg-transparent text-gray-800 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)]';
-	const sizeClasses = {
-		small: 'py-2.5 px-4 text-xs',
-		medium: 'py-3 px-5 text-sm',
-		large: 'py-3.5 px-6 text-base',
+}) => {
+	const buttonClasses = [
+		'bones-button',
+		`bones-button--${size}`,
+		`bones-button--${variant}`,
+		fullWidth ? 'bones-button--full-width' : '',
+		loading ? 'bones-button--loading' : '',
+		disabled ? 'bones-button--disabled' : '',
+		className,
+	]
+		.filter(Boolean)
+		.join(' ');
+
+	const renderContent = () => {
+		if (loading) {
+			return (
+				<span
+					className='bones-button__spinner'
+					aria-hidden='true'
+				></span>
+			);
+		}
+
+		switch (contentType) {
+			case 'labelOnly':
+				return <span>{label}</span>;
+			case 'leftIcon':
+				return (
+					<>
+						{LeftIcon && (
+							<LeftIcon className='bones-button__icon bones-button__icon--left' />
+						)}
+						<span>{label}</span>
+					</>
+				);
+			case 'rightIcon':
+				return (
+					<>
+						<span>{label}</span>
+						{RightIcon && (
+							<RightIcon className='bones-button__icon bones-button__icon--right' />
+						)}
+					</>
+				);
+			case 'bothIcons':
+				return (
+					<>
+						{LeftIcon && (
+							<LeftIcon className='bones-button__icon bones-button__icon--left' />
+						)}
+						<span>{label}</span>
+						{RightIcon && (
+							<RightIcon className='bones-button__icon bones-button__icon--right' />
+						)}
+					</>
+				);
+			case 'iconOnly':
+				return (
+					Icon && (
+						<Icon
+							className='bones-button__icon'
+							aria-hidden='true'
+						/>
+					)
+				);
+			default:
+				return <span>{label}</span>;
+		}
 	};
 
 	return (
 		<button
-			type='button'
-			className={`${baseClasses} ${primaryClasses} ${sizeClasses[size]}`}
-			style={{ backgroundColor }}
+			className={buttonClasses}
+			disabled={disabled || loading}
+			title={tooltip}
+			aria-label={contentType === 'iconOnly' ? label : undefined}
 			{...props}
 		>
-			{label}
+			{renderContent()}
 		</button>
 	);
 };
+
+export default Button;

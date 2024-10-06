@@ -1,23 +1,59 @@
-.storybook-button {
-	@apply inline-block cursor-pointer border-0 rounded-full font-bold leading-none font-sans;
+.bones-button {
+	@apply inline-flex items-center justify-center font-medium transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
 }
 
-.storybook-button--primary {
-	@apply bg-blue-500 text-white;
+.bones-button--small {
+	@apply px-2 py-1 text-xs;
 }
 
-.storybook-button--secondary {
-	@apply bg-transparent text-gray-800 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.15)];
+.bones-button--medium {
+	@apply px-4 py-2 text-sm;
 }
 
-.storybook-button--small {
-	@apply py-2.5 px-4 text-xs;
+.bones-button--large {
+	@apply px-6 py-3 text-lg;
 }
 
-.storybook-button--medium {
-	@apply py-2.75 px-5 text-sm;
+.bones-button--primary {
+	@apply bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700 focus:ring-brand-400;
 }
 
-.storybook-button--large {
-	@apply py-3 px-6 text-base;
+.bones-button--secondary {
+	@apply bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400 focus:ring-gray-400;
+}
+
+.bones-button--caution {
+	@apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-400;
+}
+
+.bones-button--transparent {
+	@apply bg-transparent text-gray-900 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-300;
+}
+
+.bones-button--full-width {
+	@apply w-full;
+}
+
+.bones-button--loading {
+	@apply cursor-wait;
+}
+
+.bones-button--disabled {
+	@apply opacity-50 cursor-not-allowed;
+}
+
+.bones-button__icon {
+	@apply flex-shrink-0;
+}
+
+.bones-button__icon--left {
+	@apply mr-2;
+}
+
+.bones-button__icon--right {
+	@apply ml-2;
+}
+
+.bones-button__spinner {
+	@apply animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full;
 }
