@@ -22,7 +22,7 @@
 		"declarationDir": "dist",
 		"jsx": "react-jsx"
 	},
-	"include": ["src"],
+	"include": ["src", "**/*.mdx"],
 	"exclude": ["node_modules", "dist"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }
