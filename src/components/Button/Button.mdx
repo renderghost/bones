@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button Component
+
+The Button component is a versatile and customizable UI element designed for user interactions in our design system.
+
+<Canvas of={ButtonStories.Default} />
+
+## Controls
+
+Experiment with the Button component using the controls below:
+
+<Controls />
+
+## Usage
+
+The Button component can be customized using the following props:
+
+-   `label`: The text to display on the button
+-   `variant`: The visual style of the button ('primary', 'secondary', 'caution', 'transparent')
+-   `size`: The size of the button ('small', 'medium', 'large')
+-   `contentType`: The layout of the button content ('labelOnly', 'leftIcon', 'rightIcon', 'bothIcons', 'iconOnly')
+-   `icon`: The icon to display when `contentType` is 'iconOnly'
+-   `leftIcon`: The icon to display on the left side of the label
+-   `rightIcon`: The icon to display on the right side of the label
+-   `fullWidth`: Whether the button should take up the full width of its container
+-   `loading`: Whether the button is in a loading state
+-   `disabled`: Whether the button is disabled
+
+Experiment with these controls to see how they affect the Button's appearance and behavior.
+
+## Example Usage
+
+Here's an example of how to use the Button component in your React application:
+
+```jsx
+import { Button } from './Button';
+import { ArrowRight } from 'lucide-react';
+
+function ExampleComponent() {
+	return (
+		<Button
+			label='Submit'
+			variant='primary'
+			size='medium'
+			contentType='rightIcon'
+			rightIcon={ArrowRight}
+			onClick={() => console.log('Button clicked!')}
+		/>
+	);
+}
+```
+
+This example shows a primary button with a right icon, using the "medium" size.

@@ -1,14 +1,18 @@
 import type { Preview } from '@storybook/react';
-import './preview.css';
+import '../src/styles/globals.css';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 const preview: Preview = {
 	parameters: {
+		actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,
 				date: /Date$/i,
 			},
+		},
+		docs: {
+			// You can add custom options here if needed
 		},
 	},
 	decorators: [

@@ -4,10 +4,11 @@ import type { StorybookConfig } from '@storybook/react-vite';
 import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
-	stories: ['../src/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 	addons: [
 		'@chromatic-com/storybook',
 		'@storybook/addon-designs',
+		'@storybook/addon-docs',
 		'@storybook/addon-essentials',
 		'@storybook/addon-interactions',
 		'@storybook/addon-links',
@@ -19,6 +20,9 @@ const config: StorybookConfig = {
 	framework: {
 		name: '@storybook/react-vite',
 		options: {},
+	},
+	docs: {
+		autodocs: 'tag',
 	},
 	viteFinal: async config => {
 		return mergeConfig(config, {
