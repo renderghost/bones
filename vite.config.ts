@@ -4,6 +4,9 @@ import path from 'path';
 
 export default defineConfig({
 	plugins: [react()],
+	optimizeDeps: {
+		include: ['@storybook/addon-docs/blocks'],
+	},
 	css: {
 		postcss: {
 			plugins: [require('tailwindcss'), require('autoprefixer')],

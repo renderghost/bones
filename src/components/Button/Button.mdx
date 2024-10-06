@@ -1,0 +1,202 @@
+import { Meta, Story, Canvas, Controls, ArgTypes } from '@storybook/blocks';
+import * as ButtonStories from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button Component
+
+The Button component is a versatile and customizable UI element designed for user interactions in our design system. It provides a consistent look and feel across the application while offering flexibility for various use cases.
+
+## Features
+
+-   Multiple visual variants (primary, secondary, caution, transparent)
+-   Three size options (small, medium, large)
+-   Support for icons (left, right, or both sides)
+-   Loading state for asynchronous actions
+-   Full-width option for responsive layouts
+-   Accessibility-friendly with proper ARIA attributes
+
+## Controls
+
+<Canvas of={ButtonStories.Default} />
+
+<Controls />
+
+## Props
+
+The Button component accepts the following props:
+
+<ArgTypes of={ButtonStories} />
+
+## Variants
+
+Buttons come in four visual styles, each designed for specific use cases:
+
+<Canvas>
+	<Story
+		of={ButtonStories.Default}
+		args={{ variant: 'primary', label: 'Primary' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ variant: 'secondary', label: 'Secondary' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ variant: 'caution', label: 'Caution' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ variant: 'transparent', label: 'Transparent' }}
+	/>
+</Canvas>
+
+-   **Primary**: Use for the main call-to-action on a page.
+-   **Secondary**: For secondary actions that complement the primary action.
+-   **Caution**: Used for actions that require user attention or might have significant consequences.
+-   **Transparent**: Useful for less prominent actions or in contexts where a solid button might be too visually heavy.
+
+## Sizes
+
+Buttons are available in three sizes to accommodate different design needs:
+
+<Canvas>
+	<Story
+		of={ButtonStories.Default}
+		args={{ size: 'small', label: 'Small' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ size: 'medium', label: 'Medium' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ size: 'large', label: 'Large' }}
+	/>
+</Canvas>
+
+## Content Types
+
+The Button component supports various content configurations:
+
+<Canvas>
+	<Story
+		of={ButtonStories.Default}
+		args={{ contentType: 'labelOnly', label: 'Label Only' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{
+			contentType: 'leftIcon',
+			label: 'Left Icon',
+			leftIcon: ButtonStories.Default.args.leftIcon,
+		}}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{
+			contentType: 'rightIcon',
+			label: 'Right Icon',
+			rightIcon: ButtonStories.Default.args.rightIcon,
+		}}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{
+			contentType: 'bothIcons',
+			label: 'Both Icons',
+			leftIcon: ButtonStories.Default.args.leftIcon,
+			rightIcon: ButtonStories.Default.args.rightIcon,
+		}}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{
+			contentType: 'iconOnly',
+			icon: ButtonStories.Default.args.leftIcon,
+			label: 'Icon Only',
+		}}
+	/>
+</Canvas>
+
+## States
+
+Buttons have different states to provide visual feedback to users:
+
+<Canvas>
+	<Story of={ButtonStories.Default} args={{ label: 'Default' }} />
+	<Story
+		of={ButtonStories.Default}
+		args={{ label: 'Hover', className: 'hover' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ label: 'Active', className: 'active' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ label: 'Focus', className: 'focus' }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ label: 'Disabled', disabled: true }}
+	/>
+	<Story
+		of={ButtonStories.Default}
+		args={{ label: 'Loading', loading: true }}
+	/>
+</Canvas>
+
+## Usage Guidelines
+
+1. Use **Primary** buttons for the main action on a page or in a section.
+2. Use **Secondary** buttons for alternative or less important actions.
+3. Use **Caution** buttons sparingly, only for actions that need extra attention or might have significant consequences.
+4. Use **Transparent** buttons for less prominent actions or in areas where a solid button might be too visually heavy.
+5. Choose the appropriate size based on the button's importance and the available space.
+6. Use icons to enhance the button's meaning, but ensure the label is clear and descriptive.
+7. Avoid using too many buttons in close proximity to prevent overwhelming the user.
+
+## Accessibility
+
+The Button component follows these accessibility best practices:
+
+-   Uses semantic `<button>` elements
+-   Provides appropriate contrast ratios for all variants and states
+-   Includes `aria-label` for icon-only buttons
+-   Communicates loading and disabled states to screen readers
+
+## Example Usage
+
+Here's an example of how to use the Button component in your React application:
+
+```jsx
+import { Button } from './Button';
+import { ArrowRight } from 'lucide-react';
+
+function ExampleComponent() {
+	return (
+		<Button
+			label='Submit'
+			variant='primary'
+			size='medium'
+			contentType='rightIcon'
+			rightIcon={ArrowRight}
+			onClick={() => console.log('Button clicked!')}
+		/>
+	);
+}
+```
+
+This example shows a primary button with a right icon, using the "medium" size.
+
+## Best Practices
+
+1. Use clear, action-oriented labels (e.g., "Submit" instead of "OK")
+2. Ensure sufficient contrast between the button and its background
+3. Group related actions together
+4. Use loading state for actions that may take time to complete
+5. Provide feedback after the button is clicked (e.g., success message, error notification)
+6. Consider mobile users and ensure buttons are large enough for touch interactions
+
+By following these guidelines and utilizing the Button component's various props, you can create consistent, accessible, and user-friendly interfaces across your application.

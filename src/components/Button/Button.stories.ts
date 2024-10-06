@@ -1,20 +1,29 @@
-// Button.stories.ts
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
-import { Home, ArrowRight, Search } from 'lucide-react';
+import { Home, ArrowRight, LucideIcon } from 'lucide-react';
+
+type IconOption = LucideIcon | undefined;
+
+const iconOptions: Record<string, IconOption> = {
+	None: undefined,
+	Home: Home,
+	ArrowRight: ArrowRight,
+};
 
 const meta: Meta<typeof Button> = {
 	title: 'Components/Button',
 	component: Button,
 	argTypes: {
+		label: { control: 'text' },
 		variant: {
 			control: 'select',
 			options: ['primary', 'secondary', 'caution', 'transparent'],
+			defaultValue: 'primary',
 		},
 		size: {
 			control: 'select',
 			options: ['small', 'medium', 'large'],
+			defaultValue: 'medium',
 		},
 		contentType: {
 			control: 'select',
@@ -25,13 +34,29 @@ const meta: Meta<typeof Button> = {
 				'bothIcons',
 				'iconOnly',
 			],
+			defaultValue: 'leftIcon',
 		},
-		icon: { control: false },
-		leftIcon: { control: false },
-		rightIcon: { control: false },
-		fullWidth: { control: 'boolean' },
-		loading: { control: 'boolean' },
-		disabled: { control: 'boolean' },
+		icon: {
+			control: 'select',
+			options: Object.keys(iconOptions),
+			mapping: iconOptions,
+			defaultValue: 'None',
+		},
+		leftIcon: {
+			control: 'select',
+			options: Object.keys(iconOptions),
+			mapping: iconOptions,
+			defaultValue: 'Home',
+		},
+		rightIcon: {
+			control: 'select',
+			options: Object.keys(iconOptions),
+			mapping: iconOptions,
+			defaultValue: 'ArrowRight',
+		},
+		fullWidth: { control: 'boolean', defaultValue: false },
+		loading: { control: 'boolean', defaultValue: false },
+		disabled: { control: 'boolean', defaultValue: false },
 		onClick: { action: 'clicked' },
 	},
 };
@@ -39,103 +64,16 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const LabelOnly: Story = {
+export const Default: Story = {
 	args: {
-		label: 'Label Only',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'labelOnly',
-	},
-};
-
-export const WithLeftIcon: Story = {
-	args: {
-		label: 'Left Icon',
+		label: 'Some Label',
 		variant: 'primary',
 		size: 'medium',
 		contentType: 'leftIcon',
-		leftIcon: Home,
-	},
-};
-
-export const WithRightIcon: Story = {
-	args: {
-		label: 'Right Icon',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'rightIcon',
-		rightIcon: ArrowRight,
-	},
-};
-
-export const WithBothIcons: Story = {
-	args: {
-		label: 'Both Icons',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'bothIcons',
+		fullWidth: false,
+		loading: false,
+		disabled: false,
 		leftIcon: Home,
 		rightIcon: ArrowRight,
-	},
-};
-
-export const IconOnly: Story = {
-	args: {
-		label: 'Search',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'iconOnly',
-		icon: Search,
-	},
-};
-
-export const Loading: Story = {
-	args: {
-		label: 'Loading',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'labelOnly',
-		loading: true,
-	},
-};
-
-export const Disabled: Story = {
-	args: {
-		label: 'Disabled',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'labelOnly',
-		disabled: true,
-	},
-};
-
-export const FullWidth: Story = {
-	args: {
-		label: 'Full Width',
-		variant: 'primary',
-		size: 'medium',
-		contentType: 'labelOnly',
-		fullWidth: true,
-	},
-};
-
-export const Secondary: Story = {
-	args: {
-		...LabelOnly.args,
-		variant: 'secondary',
-	},
-};
-
-export const Caution: Story = {
-	args: {
-		...LabelOnly.args,
-		variant: 'caution',
-	},
-};
-
-export const Transparent: Story = {
-	args: {
-		...LabelOnly.args,
-		variant: 'transparent',
 	},
 };
