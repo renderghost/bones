@@ -5,6 +5,7 @@ import { Home, ArrowRight, LucideIcon } from 'lucide-react';
 type IconOption = LucideIcon | undefined;
 
 const iconOptions: Record<string, IconOption> = {
+	None: undefined,
 	Home: Home,
 	ArrowRight: ArrowRight,
 };
@@ -39,7 +40,7 @@ const meta: Meta<typeof Button> = {
 			control: 'select',
 			options: Object.keys(iconOptions),
 			mapping: iconOptions,
-			defaultValue: 'Home',
+			defaultValue: 'None',
 		},
 		leftIcon: {
 			control: 'select',
@@ -65,16 +66,14 @@ type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
 	args: {
-        label: 'Some Label',
-        variant: 'primary',
-        size: 'medium',
-        contentType: "rightIcon",
-        fullWidth: false,
-        loading: false,
-        disabled: false,
-        leftIcon: "Home",
-        rightIcon: "ArrowRight",
-        icon: "ArrowRight",
-        tooltip: ""
-    },
+		label: 'Some Label',
+		variant: 'primary',
+		size: 'medium',
+		contentType: 'leftIcon',
+		fullWidth: false,
+		loading: false,
+		disabled: false,
+		leftIcon: Home,
+		rightIcon: ArrowRight,
+	},
 };
