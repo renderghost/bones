@@ -2,8 +2,9 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
 	content: [
-		'./src/**/*.{js,ts,jsx,tsx,mdx}',
-		'./.storybook/**/*.{js,jsx,ts,tsx}',
+		'./src/**/*.{js,jsx,ts,tsx}', // scans all JS/TS files in src
+		'./src/**/*.css', // scans all CSS files in src
+		'./.storybook/**/*.{js,jsx,ts,tsx}', // scans Storybook config files
 	],
 	theme: {
 		extend: {
@@ -30,14 +31,13 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: ['DM Sans', 'sans-serif'],
-				serif: ['DM Serif', 'serif'],
-				'serif-display': ['DM Serif Display', 'serif'],
+				serif: ['DM Serif Display', 'serif'],
 				mono: ['DM Mono', 'monospace'],
 			},
 		},
 	},
 	plugins: [],
-	darkMode: 'media',
+	darkMode: ['class', '[data-mode="dark"]'],
 };
 
 export default config;
