@@ -1,5 +1,3 @@
-// Button.tsx
-
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
 import './button.css';
@@ -13,18 +11,15 @@ type ButtonContent =
 	| 'bothIcons'
 	| 'iconOnly';
 
-/**
- * Button component for user interactions.
- */
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	/** The text to display on the button */
 	label?: string;
 	/** The size of the button */
-	size: ButtonSize;
+	size?: ButtonSize;
 	/** The visual style variant of the button */
-	variant: ButtonVariant;
+	variant?: ButtonVariant;
 	/** The content layout of the button */
-	contentType: ButtonContent;
+	contentType?: ButtonContent;
 	/** Icon to display when contentType is 'iconOnly' */
 	icon?: LucideIcon;
 	/** Icon to display on the left side of the label */
@@ -39,14 +34,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	tooltip?: string;
 }
 
-/**
- * Primary UI component for user interaction
- */
 const Button: React.FC<ButtonProps> = ({
 	label,
-	size,
-	variant,
-	contentType,
+	size = 'medium',
+	variant = 'primary',
+	contentType = 'labelOnly',
 	icon: Icon,
 	leftIcon: LeftIcon,
 	rightIcon: RightIcon,

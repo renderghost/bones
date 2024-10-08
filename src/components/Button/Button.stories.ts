@@ -62,27 +62,25 @@ const meta: Meta<typeof Button> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Button>;
 
 export const Default: Story = {
 	args: {
-		label: 'Some Label',
+		label: 'Default Button',
 		variant: 'primary',
 		size: 'medium',
-		contentType: 'leftIcon',
+		contentType: 'labelOnly',
 		fullWidth: false,
 		loading: false,
 		disabled: false,
-		leftIcon: Home,
-		rightIcon: ArrowRight,
 	},
 };
 
-// Variant stories
 export const Primary: Story = {
 	args: {
 		...Default.args,
-		label: 'Primary',
+		label: 'Primary Button',
 		variant: 'primary',
 	},
 };
@@ -90,7 +88,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
 	args: {
 		...Default.args,
-		label: 'Secondary',
+		label: 'Secondary Button',
 		variant: 'secondary',
 	},
 };
@@ -98,7 +96,7 @@ export const Secondary: Story = {
 export const Caution: Story = {
 	args: {
 		...Default.args,
-		label: 'Caution',
+		label: 'Caution Button',
 		variant: 'caution',
 	},
 };
@@ -106,13 +104,13 @@ export const Caution: Story = {
 export const Transparent: Story = {
 	args: {
 		...Default.args,
-		label: 'Transparent',
+		label: 'Transparent Button',
 		variant: 'transparent',
 	},
 };
 
 // Size stories
-export const Small: Story = {
+export const Small: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Small',
@@ -120,7 +118,7 @@ export const Small: Story = {
 	},
 };
 
-export const Medium: Story = {
+export const Medium: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Medium',
@@ -128,7 +126,7 @@ export const Medium: Story = {
 	},
 };
 
-export const Large: Story = {
+export const Large: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Large',
@@ -137,7 +135,7 @@ export const Large: Story = {
 };
 
 // Content type stories
-export const LabelOnly: Story = {
+export const LabelOnly: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Label Only',
@@ -145,7 +143,7 @@ export const LabelOnly: Story = {
 	},
 };
 
-export const LeftIcon: Story = {
+export const LeftIcon: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Left Icon',
@@ -154,7 +152,7 @@ export const LeftIcon: Story = {
 	},
 };
 
-export const RightIcon: Story = {
+export const RightIcon: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Right Icon',
@@ -163,7 +161,7 @@ export const RightIcon: Story = {
 	},
 };
 
-export const BothIcons: Story = {
+export const BothIcons: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Both Icons',
@@ -173,7 +171,7 @@ export const BothIcons: Story = {
 	},
 };
 
-export const IconOnly: Story = {
+export const IconOnly: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Icon Only',
@@ -183,7 +181,7 @@ export const IconOnly: Story = {
 };
 
 // State stories
-export const Hover: Story = {
+export const Hover: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Hover',
@@ -191,7 +189,7 @@ export const Hover: Story = {
 	},
 };
 
-export const Active: Story = {
+export const Active: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Active',
@@ -199,7 +197,7 @@ export const Active: Story = {
 	},
 };
 
-export const Focus: Story = {
+export const Focus: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Focus',
@@ -207,7 +205,7 @@ export const Focus: Story = {
 	},
 };
 
-export const Disabled: Story = {
+export const Disabled: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Disabled',
@@ -215,7 +213,7 @@ export const Disabled: Story = {
 	},
 };
 
-export const Loading: Story = {
+export const Loading: StoryObj = {
 	args: {
 		...Default.args,
 		label: 'Loading',
