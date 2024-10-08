@@ -1,5 +1,5 @@
 .bones-button {
-	@apply inline-flex items-center justify-center font-medium transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2;
+	@apply inline-flex items-center justify-center font-medium transition-all ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-attention-500;
 }
 
 .bones-button--small {
@@ -15,19 +15,19 @@
 }
 
 .bones-button--primary {
-	@apply bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700 focus:ring-brand-400;
+	@apply bg-brand-500 text-white hover:bg-brand-600 active:bg-brand-700;
 }
 
 .bones-button--secondary {
-	@apply bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400 focus:ring-gray-400;
+	@apply bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400;
 }
 
 .bones-button--caution {
-	@apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700 focus:ring-red-400;
+	@apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700;
 }
 
 .bones-button--transparent {
-	@apply bg-transparent text-gray-900 hover:bg-gray-100 active:bg-gray-200 focus:ring-gray-300;
+	@apply bg-transparent text-gray-900 hover:bg-gray-100 active:bg-gray-200;
 }
 
 .bones-button--full-width {

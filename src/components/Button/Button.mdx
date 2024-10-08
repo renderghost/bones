@@ -33,22 +33,10 @@ The Button component accepts the following props:
 Buttons come in four visual styles, each designed for specific use cases:
 
 <Canvas>
-	<Story
-		of={ButtonStories.Default}
-		args={{ variant: 'primary', label: 'Primary' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ variant: 'secondary', label: 'Secondary' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ variant: 'caution', label: 'Caution' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ variant: 'transparent', label: 'Transparent' }}
-	/>
+	<Story of={ButtonStories.Primary} />
+	<Story of={ButtonStories.Secondary} />
+	<Story of={ButtonStories.Caution} />
+	<Story of={ButtonStories.Transparent} />
 </Canvas>
 
 -   **Primary**: Use for the main call-to-action on a page.
@@ -61,18 +49,9 @@ Buttons come in four visual styles, each designed for specific use cases:
 Buttons are available in three sizes to accommodate different design needs:
 
 <Canvas>
-	<Story
-		of={ButtonStories.Default}
-		args={{ size: 'small', label: 'Small' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ size: 'medium', label: 'Medium' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ size: 'large', label: 'Large' }}
-	/>
+	<Story of={ButtonStories.Small} />
+	<Story of={ButtonStories.Medium} />
+	<Story of={ButtonStories.Large} />
 </Canvas>
 
 ## Content Types
@@ -80,43 +59,11 @@ Buttons are available in three sizes to accommodate different design needs:
 The Button component supports various content configurations:
 
 <Canvas>
-	<Story
-		of={ButtonStories.Default}
-		args={{ contentType: 'labelOnly', label: 'Label Only' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{
-			contentType: 'leftIcon',
-			label: 'Left Icon',
-			leftIcon: ButtonStories.Default.args.leftIcon,
-		}}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{
-			contentType: 'rightIcon',
-			label: 'Right Icon',
-			rightIcon: ButtonStories.Default.args.rightIcon,
-		}}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{
-			contentType: 'bothIcons',
-			label: 'Both Icons',
-			leftIcon: ButtonStories.Default.args.leftIcon,
-			rightIcon: ButtonStories.Default.args.rightIcon,
-		}}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{
-			contentType: 'iconOnly',
-			icon: ButtonStories.Default.args.leftIcon,
-			label: 'Icon Only',
-		}}
-	/>
+	<Story of={ButtonStories.LabelOnly} />
+	<Story of={ButtonStories.LeftIcon} />
+	<Story of={ButtonStories.RightIcon} />
+	<Story of={ButtonStories.BothIcons} />
+	<Story of={ButtonStories.IconOnly} />
 </Canvas>
 
 ## States
@@ -124,27 +71,12 @@ The Button component supports various content configurations:
 Buttons have different states to provide visual feedback to users:
 
 <Canvas>
-	<Story of={ButtonStories.Default} args={{ label: 'Default' }} />
-	<Story
-		of={ButtonStories.Default}
-		args={{ label: 'Hover', className: 'hover' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ label: 'Active', className: 'active' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ label: 'Focus', className: 'focus' }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ label: 'Disabled', disabled: true }}
-	/>
-	<Story
-		of={ButtonStories.Default}
-		args={{ label: 'Loading', loading: true }}
-	/>
+	<Story of={ButtonStories.Default} />
+	<Story of={ButtonStories.Hover} />
+	<Story of={ButtonStories.Active} />
+	<Story of={ButtonStories.Focus} />
+	<Story of={ButtonStories.Disabled} />
+	<Story of={ButtonStories.Loading} />
 </Canvas>
 
 ## Usage Guidelines
@@ -171,7 +103,7 @@ The Button component follows these accessibility best practices:
 Here's an example of how to use the Button component in your React application:
 
 ```jsx
-import { Button } from './Button';
+import Button from './Button';
 import { ArrowRight } from 'lucide-react';
 
 function ExampleComponent() {
