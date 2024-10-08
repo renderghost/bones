@@ -5,6 +5,11 @@ import { withThemeByDataAttribute } from '@storybook/addon-themes';
 const preview: Preview = {
 	parameters: {
 		// actions: { argTypesRegex: '^on[A-Z].*' },
+		options: {
+			storySort: {
+				order: ['Start Here', '*'],
+			},
+		},
 		controls: {
 			matchers: {
 				color: /(background|color)$/i,

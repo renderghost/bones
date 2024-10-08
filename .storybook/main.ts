@@ -34,4 +34,16 @@ const config: StorybookConfig = {
 		});
 	},
 };
+
 export default config;
+
+// Add this section after the config object
+export const preview = {
+	parameters: {
+		options: {
+			storySort: {
+				order: ['Start Here', '*'],
+			},
+		},
+	},
+};
