@@ -1,39 +1,17 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import { Button } from './Button';
-
 import Github from './assets/github.svg';
 import Discord from './assets/discord.svg';
 import Youtube from './assets/youtube.svg';
 import Tutorials from './assets/tutorials.svg';
 
-// V1 Goal - Render Button
-export const RightArrow = () => (
-
-<svg
-	viewBox='0 0 14 14'
-	width='8px'
-	height='14px'
-	style={{
-		marginLeft: '4px',
-		display: 'inline-block',
-		shapeRendering: 'inherit',
-		verticalAlign: 'middle',
-		fill: 'currentColor',
-	}}
->
-	<path d='m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z' />
-</svg>
-
 <Meta title='Introduction to My Storybook' />
 
 <div className="sb-container">
   <div className="sb-section-title">
-    # Welcome to My Storybook
+    <h1>Welcome to My Storybook</h1>
     <p>Welcome to my experimental Storybook setup! This environment is designed for exploring components, working with design system technologies, and experimenting with ideas. Keep in mind, the components here are not intended for production in any design system—they’re purely experimental.</p>
     <p>Feel free to explore, give feedback, or take inspiration from any of the ideas presented here. You can learn more about me <a href="https://links.renderg.host/" target="_blank">here</a> or check out the source code <a href="https://github.com/renderghost/bones" target="_blank">on GitHub</a>.</p>
   </div>
-
-{' '}
 
 <div className='sb-section'>
 	<div className='sb-section-item'>
@@ -73,8 +51,6 @@ export const RightArrow = () => (
 	</div>
 </div>
 
-{' '}
-
 <div className='sb-section'>
 	<div className='sb-section-item'>
 		<h4 className='sb-section-item-heading'>
@@ -86,14 +62,6 @@ export const RightArrow = () => (
 			and feel free to play with the controls to adjust its properties!
 		</p>
 
-    	{/* Button Render */}
-    	<Canvas>
-    		<Story
-    			of={Button}
-    			args={{ label: 'Click Me', variant: 'primary', size: 'medium' }}
-    		/>
-    	</Canvas>
-    	<Controls of={Button} />
     </div>
 
 </div>
@@ -109,22 +77,22 @@ export const RightArrow = () => (
       <div className="sb-section-item">
         <img src={Github} alt="Github logo" className="sb-explore-image"/>
         <p>Star this repository on GitHub and follow my journey in UI development!</p>
-        <a href="https://github.com/renderghost/bones" target="_blank">Star on GitHub<RightArrow /></a>
+        <a href="https://github.com/renderghost/bones" target="_blank">Star on GitHub</a>
       </div>
       <div className="sb-section-item">
         <img src={Discord} alt="Discord logo" className="sb-explore-image"/>
         <p>Get support and chat with other developers on Discord.</p>
-        <a href="https://discord.gg/storybook" target="_blank">Join Discord<RightArrow /></a>
+        <a href="https://discord.gg/storybook" target="_blank">Join Discord</a>
       </div>
       <div className="sb-section-item">
         <img src={Youtube} alt="Youtube logo" className="sb-explore-image"/>
         <p>Watch tutorials and interviews on the Chromatic UI YouTube channel.</p>
-        <a href="https://www.youtube.com/@chromaticui" target="_blank">Watch on YouTube<RightArrow /></a>
+        <a href="https://www.youtube.com/@chromaticui" target="_blank">Watch on YouTube</a>
       </div>
       <div className="sb-section-item">
         <img src={Tutorials} alt="A book" className="sb-explore-image"/>
         <p>Follow detailed tutorials on Storybook’s key workflows.</p>
-        <a href="https://storybook.js.org/tutorials/" target="_blank">Discover tutorials<RightArrow /></a>
+        <a href="https://storybook.js.org/tutorials/" target="_blank">Discover tutorials</a>
       </div>
     </div>
 
