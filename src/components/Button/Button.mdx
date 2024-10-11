@@ -1,4 +1,11 @@
-import { Meta, Story, Canvas, Controls, ArgTypes } from '@storybook/blocks';
+import {
+	Meta,
+	Story,
+	Stories,
+	Canvas,
+	Controls,
+	ArgTypes,
+} from '@storybook/blocks';
 import * as ButtonStories from './Button.stories';
 
 <Meta of={ButtonStories} />
@@ -19,7 +26,6 @@ The Button component is a versatile and customizable UI element designed for use
 ## Controls
 
 <Canvas of={ButtonStories.Default} />
-
 <Controls />
 
 ## Props
@@ -33,10 +39,11 @@ The Button component accepts the following props:
 Buttons come in four visual styles, each designed for specific use cases:
 
 <Canvas>
-	<Story of={ButtonStories.Primary} />
-	<Story of={ButtonStories.Secondary} />
-	<Story of={ButtonStories.Caution} />
-	<Story of={ButtonStories.Transparent} />
+
+<Story of={ButtonStories.Primary} />
+<Story of={ButtonStories.Secondary} />
+<Story of={ButtonStories.Caution} />
+<Story of={ButtonStories.Transparent} />
 </Canvas>
 
 -   **Primary**: Use for the main call-to-action on a page.
