@@ -110,7 +110,7 @@ export const Transparent: Story = {
 };
 
 // Size stories
-export const Small: StoryObj = {
+export const Small: Story = {
 	args: {
 		...Default.args,
 		label: 'Small',
@@ -118,7 +118,7 @@ export const Small: StoryObj = {
 	},
 };
 
-export const Medium: StoryObj = {
+export const Medium: Story = {
 	args: {
 		...Default.args,
 		label: 'Medium',
@@ -126,7 +126,7 @@ export const Medium: StoryObj = {
 	},
 };
 
-export const Large: StoryObj = {
+export const Large: Story = {
 	args: {
 		...Default.args,
 		label: 'Large',
@@ -135,7 +135,7 @@ export const Large: StoryObj = {
 };
 
 // Content type stories
-export const LabelOnly: StoryObj = {
+export const LabelOnly: Story = {
 	args: {
 		...Default.args,
 		label: 'Label Only',
@@ -143,7 +143,7 @@ export const LabelOnly: StoryObj = {
 	},
 };
 
-export const LeftIcon: StoryObj = {
+export const LeftIcon: Story = {
 	args: {
 		...Default.args,
 		label: 'Left Icon',
@@ -152,7 +152,7 @@ export const LeftIcon: StoryObj = {
 	},
 };
 
-export const RightIcon: StoryObj = {
+export const RightIcon: Story = {
 	args: {
 		...Default.args,
 		label: 'Right Icon',
@@ -161,7 +161,7 @@ export const RightIcon: StoryObj = {
 	},
 };
 
-export const BothIcons: StoryObj = {
+export const BothIcons: Story = {
 	args: {
 		...Default.args,
 		label: 'Both Icons',
@@ -171,7 +171,7 @@ export const BothIcons: StoryObj = {
 	},
 };
 
-export const IconOnly: StoryObj = {
+export const IconOnly: Story = {
 	args: {
 		...Default.args,
 		label: 'Icon Only',
@@ -181,7 +181,7 @@ export const IconOnly: StoryObj = {
 };
 
 // State stories
-export const Hover: StoryObj = {
+export const Hover: Story = {
 	args: {
 		...Default.args,
 		label: 'Hover',
@@ -189,7 +189,7 @@ export const Hover: StoryObj = {
 	},
 };
 
-export const Active: StoryObj = {
+export const Active: Story = {
 	args: {
 		...Default.args,
 		label: 'Active',
@@ -197,7 +197,7 @@ export const Active: StoryObj = {
 	},
 };
 
-export const Focus: StoryObj = {
+export const Focus: Story = {
 	args: {
 		...Default.args,
 		label: 'Focus',
@@ -205,7 +205,7 @@ export const Focus: StoryObj = {
 	},
 };
 
-export const Disabled: StoryObj = {
+export const Disabled: Story = {
 	args: {
 		...Default.args,
 		label: 'Disabled',
@@ -213,7 +213,7 @@ export const Disabled: StoryObj = {
 	},
 };
 
-export const Loading: StoryObj = {
+export const Loading: Story = {
 	args: {
 		...Default.args,
 		label: 'Loading',

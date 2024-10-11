@@ -16,21 +16,46 @@ The Button component is a versatile and customizable UI element designed for use
 -   Full-width option for responsive layouts
 -   Accessibility-friendly with proper ARIA attributes
 
-## Controls
+{/* ## Controls */}
 
-<Canvas of={ButtonStories.Default} />
+{/* <Canvas of={ButtonStories.Default} /><Controls /> */}
 
-<Controls />
+{/* ## Props */}
 
-## Props
+{/* The Button component accepts the following props: */}
 
-The Button component accepts the following props:
-
-<ArgTypes of={ButtonStories} />
+{/* <ArgTypes of={ButtonStories} /> */}
 
 ## Variants
 
 Buttons come in four visual styles, each designed for specific use cases:
+
+{/* <Canvas> */}
+
+<div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+	<Story of={ButtonStories.Primary} />
+	<Story of={ButtonStories.Secondary} />
+	<Story of={ButtonStories.Caution} />
+	<Story of={ButtonStories.Transparent} />
+</div>
+{/* </Canvas> */}
+
+<Canvas>
+	<div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+		<Story of={ButtonStories.Primary} />
+		<Story of={ButtonStories.Secondary} />
+		<Story of={ButtonStories.Caution} />
+		<Story of={ButtonStories.Transparent} />
+	</div>
+</Canvas>
+
+{/* <Canvas> */}
+
+<Story of={ButtonStories.Primary} />
+<Story of={ButtonStories.Secondary} />
+<Story of={ButtonStories.Caution} />
+<Story of={ButtonStories.Transparent} />
+{/* </Canvas> */}
 
 <Canvas>
 	<Story of={ButtonStories.Primary} />
