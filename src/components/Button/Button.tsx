@@ -49,6 +49,16 @@ const Button: React.FC<ButtonProps> = ({
 	disabled = false,
 	...props
 }) => {
+	console.log('Button props:', {
+		label,
+		size,
+		variant,
+		contentType,
+		fullWidth,
+		loading,
+		disabled,
+		className,
+	});
 	const buttonClasses = [
 		'bones-button',
 		`bones-button--${size}`,

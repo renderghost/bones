@@ -1,74 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
-import { Home, ArrowRight, LucideIcon } from 'lucide-react';
-import { Description, Title, Subtitle, Docs } from '@storybook/blocks';
-
-type IconOption = LucideIcon | undefined;
-
-const iconOptions: Record<string, IconOption> = {
-	None: undefined,
-	Home: Home,
-	ArrowRight: ArrowRight,
-};
+import { Home, ArrowRight } from 'lucide-react';
 
 const meta: Meta<typeof Button> = {
 	title: 'Components/Button',
 	component: Button,
-	argTypes: {
-		label: { control: 'text' },
-		variant: {
-			control: 'radio',
-			options: ['primary', 'secondary', 'caution', 'transparent'],
-			defaultValue: 'primary',
-		},
-		size: {
-			control: 'radio',
-			options: ['small', 'medium', 'large'],
-			defaultValue: 'medium',
-		},
-		contentType: {
-			control: 'radio',
-			options: [
-				'labelOnly',
-				'leftIcon',
-				'rightIcon',
-				'bothIcons',
-				'iconOnly',
-			],
-			defaultValue: 'leftIcon',
-		},
-		icon: {
-			control: 'radio',
-			options: Object.keys(iconOptions),
-			mapping: iconOptions,
-			defaultValue: 'None',
-		},
-		leftIcon: {
-			control: 'radio',
-			options: Object.keys(iconOptions),
-			mapping: iconOptions,
-			defaultValue: 'Home',
-		},
-		rightIcon: {
-			control: 'radio',
-			options: Object.keys(iconOptions),
-			mapping: iconOptions,
-			defaultValue: 'ArrowRight',
-		},
-		fullWidth: { control: 'boolean', defaultValue: false },
-		loading: { control: 'boolean', defaultValue: false },
-		disabled: { control: 'boolean', defaultValue: false },
-		onClick: { action: 'clicked' },
+	parameters: {
+		controls: { hideNoControlsWarning: true },
 	},
 };
 
 export default meta;
-
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
+export const Playground: Story = {
 	args: {
-		label: 'Default Button',
+		label: 'Button',
 		variant: 'primary',
 		size: 'medium',
 		contentType: 'labelOnly',
@@ -80,144 +27,125 @@ export const Default: Story = {
 
 export const Primary: Story = {
 	args: {
-		...Default.args,
 		label: 'Primary Button',
 		variant: 'primary',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Secondary: Story = {
 	args: {
-		...Default.args,
 		label: 'Secondary Button',
 		variant: 'secondary',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Caution: Story = {
 	args: {
-		...Default.args,
 		label: 'Caution Button',
 		variant: 'caution',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Transparent: Story = {
 	args: {
-		...Default.args,
 		label: 'Transparent Button',
 		variant: 'transparent',
 	},
+	parameters: { controls: { disable: true } },
 };
 
-// Size stories
 export const Small: Story = {
 	args: {
-		...Default.args,
-		label: 'Small',
+		label: 'Small Button',
 		size: 'small',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Medium: Story = {
 	args: {
-		...Default.args,
-		label: 'Medium',
+		label: 'Medium Button',
 		size: 'medium',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Large: Story = {
 	args: {
-		...Default.args,
-		label: 'Large',
+		label: 'Large Button',
 		size: 'large',
 	},
+	parameters: { controls: { disable: true } },
 };
 
-// Content type stories
 export const LabelOnly: Story = {
 	args: {
-		...Default.args,
 		label: 'Label Only',
 		contentType: 'labelOnly',
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const LeftIcon: Story = {
 	args: {
-		...Default.args,
 		label: 'Left Icon',
 		contentType: 'leftIcon',
 		leftIcon: Home,
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const RightIcon: Story = {
 	args: {
-		...Default.args,
 		label: 'Right Icon',
 		contentType: 'rightIcon',
 		rightIcon: ArrowRight,
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const BothIcons: Story = {
 	args: {
-		...Default.args,
 		label: 'Both Icons',
 		contentType: 'bothIcons',
 		leftIcon: Home,
 		rightIcon: ArrowRight,
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const IconOnly: Story = {
 	args: {
-		...Default.args,
 		label: 'Icon Only',
 		contentType: 'iconOnly',
 		icon: Home,
 	},
-};
-
-// State stories
-export const Hover: Story = {
-	args: {
-		...Default.args,
-		label: 'Hover',
-		className: 'hover',
-	},
-};
-
-export const Active: Story = {
-	args: {
-		...Default.args,
-		label: 'Active',
-		className: 'active',
-	},
-};
-
-export const Focus: Story = {
-	args: {
-		...Default.args,
-		label: 'Focus',
-		className: 'focus',
-	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Disabled: Story = {
 	args: {
-		...Default.args,
-		label: 'Disabled',
+		label: 'Disabled Button',
 		disabled: true,
 	},
+	parameters: { controls: { disable: true } },
 };
 
 export const Loading: Story = {
 	args: {
-		...Default.args,
-		label: 'Loading',
+		label: 'Loading Button',
 		loading: true,
 	},
+	parameters: { controls: { disable: true } },
+};
+
+export const FullWidth: Story = {
+	args: {
+		label: 'Full Width Button',
+		fullWidth: true,
+	},
+	parameters: { controls: { disable: true } },
 };
