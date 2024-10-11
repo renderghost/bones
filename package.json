@@ -7,14 +7,14 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build:lib": "tsc && vite build",
-    "build:vercel": "tsc && vite build && npm run build-storybook",
-    "create:component": "node scripts/new-component.js",
-    "update:dependencies": "npm update",
     "build:storybook": "storybook build",
+    "build:vercel": "tsc && vite build && npm run build-storybook",
+    "check:lint": "eslint . --ext .js,.jsx,.ts,.tsx,.mdx --report-unused-disable-directives --max-warnings 0 --cache --fix",
+    "check:types": "tsc --noEmit",
+    "create:component": "node scripts/new-component.js",
     "start:storybook": "storybook dev -p 6006",
     "test": "jest",
-    "check:types": "tsc --noEmit",
-    "check:lint": "eslint . --ext .js,.jsx,.ts,.tsx,.mdx --report-unused-disable-directives --max-warnings 0 --cache --fix"
+    "update:dependencies": "npm update"
   },
   "keywords": [],
   "author": "",
