@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import { Home, ArrowRight, LucideIcon } from 'lucide-react';
+import { Description, Title, Subtitle, Docs } from '@storybook/blocks';
 
 type IconOption = LucideIcon | undefined;
 
