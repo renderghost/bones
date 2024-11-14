@@ -1,0 +1,20 @@
+{/* src/components/Heading/Heading.mdx */}
+
+import { Meta, Title, Description, Primary, Controls } from '@storybook/blocks';
+import * as HeadingStories from './Heading.stories';
+
+<Meta of={HeadingStories} />
+
+# Heading Component
+
+A customizable heading component that supports multiple levels (H1-H4) with consistent styling and optional truncation.
+
+## Usage
+
+```tsx
+import { Heading } from '@bones/components';
+
+function Example() {
+	return <Heading level={1}>Hello World</Heading>;
+}
+```
